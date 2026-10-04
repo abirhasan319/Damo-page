@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CodeLanBD | Learn Coding</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= INTRO ================= -->
+
+<section id="introScreen" class="intro-screen">
+
+    <div class="intro-logo">&lt;/&gt;</div>
+
+    <h1>CodeLanBD</h1>
+
+    <p>LEARN • CODE • GROW</p>
+
+    <div class="language-animation">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Python</span>
+    </div>
+
+    <div class="loading">
+        <div></div>
+    </div>
+
+</section>
+
+
+<!-- ================= LOGIN ================= -->
+
+<section id="loginPage" class="page hidden">
+
+    <div class="auth-box">
+
+        <div class="logo">&lt;/&gt;</div>
+
+        <h2>Welcome Back</h2>
+
+        <p>Login to CodeLanBD</p>
+
+        <input
+            id="loginEmail"
+            type="email"
+            placeholder="Email"
+        >
+
+        <input
+            id="loginPassword"
+            type="password"
+            placeholder="Password"
+        >
+
+        <button onclick="loginUser()">
+            Login
+        </button>
+
+        <p>
+            Don't have an account?
+            <a href="#" onclick="showRegister()">
+                Register
+            </a>
+        </p>
+
+        <p class="admin-link">
+            <a href="#" onclick="showAdminLogin()">
+                Admin Login
+            </a>
+        </p>
+
+        <p id="loginMessage"></p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REGISTER ================= -->
+
+<section id="registerPage" class="page hidden">
+
+    <div class="auth-box">
+
+        <div class="logo">&lt;/&gt;</div>
+
+        <h2>Create Account</h2>
+
+        <p>Join CodeLanBD</p>
+
+        <input
+            id="registerName"
+            type="text"
+            placeholder="Full Name"
+        >
+
+        <input
+            id="registerEmail"
+            type="email"
+            placeholder="Email"
+        >
+
+        <input
+            id="registerPassword"
+            type="password"
+            placeholder="Password"
+        >
+
+        <button onclick="registerUser()">
+            Register
+        </button>
+
+        <p>
+            Already have an account?
+            <a href="#" onclick="showLogin()">
+                Login
+            </a>
+        </p>
+
+        <p id="registerMessage"></p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ADMIN LOGIN ================= -->
+
+<section id="adminLoginPage" class="page hidden">
+
+    <div class="auth-box">
+
+        <div class="logo">&lt;/&gt;</div>
+
+        <h2>Admin Login</h2>
+
+        <input
+            id="adminEmail"
+            type="email"
+            placeholder="Admin Email"
+        >
+
+        <input
+            id="adminPassword"
+            type="password"
+            placeholder="Admin Password"
+        >
+
+        <button onclick="adminLogin()">
+            Admin Login
+        </button>
+
+        <p>
+            <a href="#" onclick="showLogin()">
+                ← Back to Login
+            </a>
+        </p>
+
+        <p id="adminLoginMessage"></p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header id="navbar" class="navbar hidden">
+
+    <div class="brand">
+        <span>&lt;/&gt;</span>
+        CodeLanBD
+    </div>
+
+    <nav>
+
+        <a href="#" onclick="showHome()">
+            Home
+        </a>
+
+        <a href="#" onclick="showCourses()">
+            Courses
+        </a>
+
+        <a href="#" onclick="showDashboard()">
+            Dashboard
+        </a>
+
+        <a
+            id="adminNav"
+            href="#"
+            onclick="showAdmin()"
+            class="hidden"
+        >
+            Admin
+        </a>
+
+        <button
+            class="logout-btn"
+            onclick="logout()"
+        >
+            Logout
+        </button>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section
+    id="homePage"
+    class="main-page hidden"
+>
+
+    <div class="hero">
+
+        <div>
+
+            <p class="small-title">
+                WELCOME TO
+            </p>
+
+            <h1>
+                CodeLanBD
+            </h1>
+
+            <h2>
+                Learn Coding.
+                Build Your Future.
+            </h2>
+
+            <p>
+                Learn HTML, CSS, JavaScript and Python
+                from beginner to advanced level.
+            </p>
+
+            <button onclick="showCourses()">
+                Explore Courses
+            </button>
+
+        </div>
+
+        <div class="code-animation">
+
+            <div>&lt;html&gt;</div>
+            <div>body { }</div>
+            <div>function()</div>
+            <div>print("Hello World")</div>
+
+        </div>
+
+    </div>
+
+
+    <div class="welcome-user">
+
+        <h2>
+            Hello,
+            <span id="welcomeName">
+                Student
+            </span>
+            👋
+        </h2>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COURSES ================= -->
+
+<section
+    id="coursesPage"
+    class="main-page hidden"
+>
+
+    <h1>
+        Programming Courses
+    </h1>
+
+    <p>
+        Learn from A to Z
+    </p>
+
+
+    <div class="course-tabs">
+
+        <button onclick="showCourse('html')">
+            HTML
+        </button>
+
+        <button onclick="showCourse('css')">
+            CSS
+        </button>
+
+        <button onclick="showCourse('javascript')">
+            JavaScript
+        </button>
+
+        <button onclick="showCourse('python')">
+            Python
+        </button>
+
+    </div>
+
+
+    <div
+        id="courseLessons"
+        class="lessons"
+    ></div>
+
+
+</section>
+
+
+<!-- ================= DASHBOARD ================= -->
+
+<section
+    id="dashboardPage"
+    class="main-page hidden"
+>
+
+    <div class="dashboard-header">
+
+        <div class="avatar">
+            <span id="avatarText">
+                AB
+            </span>
+        </div>
+
+        <div>
+
+            <small>
+                Hello,
+            </small>
+
+            <h1 id="dashboardName">
+                Student
+            </h1>
+
+        </div>
+
+    </div>
+
+
+    <div class="stats">
+
+        <div>
+            <strong>4</strong>
+            <span>Courses</span>
+        </div>
+
+        <div>
+            <strong>104+</strong>
+            <span>Lessons</span>
+        </div>
+
+        <div>
+            <strong>0%</strong>
+            <span>Completed</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ADMIN ================= -->
+
+<section
+    id="adminPage"
+    class="main-page hidden"
+>
+
+    <h1>
+        Admin Dashboard
+    </h1>
+
+    <p>
+        Manage CodeLanBD videos
+    </p>
+
+
+    <div class="admin-box">
+
+        <h2>
+            🎥 Upload Course Video
+        </h2>
+
+        <label>
+            Select Course
+        </label>
+
+        <select id="adminCourse">
+
+            <option value="html">
+                HTML
+            </option>
+
+            <option value="css">
+                CSS
+            </option>
+
+            <option value="javascript">
+                JavaScript
+            </option>
+
+            <option value="python">
+                Python
+            </option>
+
+        </select>
+
+
+        <label>
+            Select Lesson
+        </label>
+
+        <select id="adminLesson"></select>
+
+
+        <label>
+            Video File
+        </label>
+
+        <input
+            id="videoFile"
+            type="file"
+            accept="video/*"
+        >
+
+
+        <button onclick="uploadVideo()">
+            Upload Video
+        </button>
+
+
+        <p id="uploadMessage"></p>
+
+    </div>
+
+
+    <div class="admin-list">
+
+        <h2>
+            Uploaded Videos
+        </h2>
+
+        <div id="uploadedList"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= VIDEO MODAL ================= -->
+
+<div
+    id="videoModal"
+    class="video-modal hidden"
+>
+
+    <div class="video-box">
+
+        <button
+            class="close-video"
+            onclick="closeVideo()"
+        >
+            ✕
+        </button>
+
+        <h2 id="videoTitle">
+            Lesson
+        </h2>
+
+        <video
+            id="lessonVideo"
+            controls
+        ></video>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
