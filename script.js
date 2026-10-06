@@ -1045,7 +1045,7 @@ function playLesson(
     if (!video) {
 
         alert(
-            "Video not Uploaded Yet."
+            "Video Not Uploaded Yet."
         );
 
         return;
