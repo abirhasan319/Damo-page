@@ -1045,7 +1045,7 @@ function playLesson(
     if (!video) {
 
         alert(
-            "এই lesson-এর video এখনো Admin upload করেনি।"
+            "Video not Uploaded Yet."
         );
 
         return;
